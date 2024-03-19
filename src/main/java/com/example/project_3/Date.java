@@ -1,4 +1,4 @@
-package fitness;
+package com.example.project_3;
 import java.util.Calendar;
 /**
  Date class which contains month, day, and year of a date and checks if the date is valid and compares two dates

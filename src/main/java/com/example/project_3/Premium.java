@@ -1,4 +1,4 @@
-package fitness;
+package com.example.project_3;
 /**
  * Represents a premium member, extending the Member class.
  * Contains information about the number of guest passes.

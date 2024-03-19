@@ -1,7 +1,7 @@
-package fitness;
+package com.example.project_3;
 
 /**
- * The Instructor enum represents the available fitness class instructors.
+ * The Instructor enum represents the available com.example.project_3.fitness class instructors.
  * @author Colin Lee and Omkar Kadam
  */
 

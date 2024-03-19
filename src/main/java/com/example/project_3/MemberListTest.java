@@ -1,4 +1,4 @@
-//package fitness;
+//package com.example.project_3.fitness;
 //
 //import org.junit.Test;
 //

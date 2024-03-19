@@ -1,7 +1,7 @@
-package fitness;
+package com.example.project_3;
 
 /**
- * The FitnessClass class represents a fitness class at the studio.
+ * The FitnessClass class represents a com.example.project_3.fitness class at the studio.
  * @author Omkar Kadam, Colin Lee
  */
 public class FitnessClass {

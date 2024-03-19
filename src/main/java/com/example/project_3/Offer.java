@@ -1,6 +1,6 @@
-package fitness;
+package com.example.project_3;
 /**
- * Represents different offers for fitness classes.
+ * Represents different offers for com.example.project_3.fitness classes.
  * @author Omkar Kadam and Colin Lee
  */
 public enum Offer {

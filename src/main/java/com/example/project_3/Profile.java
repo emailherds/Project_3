@@ -1,4 +1,4 @@
-package fitness;
+package com.example.project_3;
 
 /**
  * Represents a profile containing first name, last name, and date of birth.

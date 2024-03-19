@@ -1,4 +1,4 @@
-package fitness;
+package com.example.project_3;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
- * Represents a list of members in a fitness center.
+ * Represents a list of members in a com.example.project_3.fitness center.
  * @author Colin Lee and Omkar Kadam
  */
 public class MemberList {

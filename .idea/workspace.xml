@@ -5,12 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d8bead8-68c5-46fe-892f-17631ee43659" name="Changes" comment="First Commit">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_3/main-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project_3/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/DateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fitness/DateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/MemberListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fitness/MemberListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project_3/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project_3/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/Basic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/Basic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/Date.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/DateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/DateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/Family.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/Family.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/FitnessClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/FitnessClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/Instructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/Instructor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/MemberList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/MemberList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/MemberListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/MemberListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/Offer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/Premium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/Premium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/RunProject2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/RunProject2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/Schedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/Time.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/classSchedule.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/classSchedule.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fitness/memberList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/memberList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project_3/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_3/main-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +73,12 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\clkrd\IdeaProjects\Project_3\src\main\java\fitness" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\omk\IdeaProjects\Project_3\src\main\java\com\example\project_3" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.project_3" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -98,6 +119,7 @@
       <workItem from="1710467227389" duration="1248000" />
       <workItem from="1710653438354" duration="89000" />
       <workItem from="1710800962494" duration="3265000" />
+      <workItem from="1710823775704" duration="6774000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -124,5 +146,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
     <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,7 +1,7 @@
-package fitness;
+package com.example.project_3;
 
 /**
- * The Location enum represents the different locations of the fitness studio.
+ * The Location enum represents the different locations of the com.example.project_3.fitness studio.
  * @author Colin Lee and Omkar Kadam
  */
 

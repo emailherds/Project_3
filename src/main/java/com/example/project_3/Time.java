@@ -1,6 +1,6 @@
-package fitness;
+package com.example.project_3;
 /**
- * The Time enum represents different times of the day for fitness classes.
+ * The Time enum represents different times of the day for com.example.project_3.fitness classes.
  * Author: Omkar Kadam, Colin Lee
  */
 public enum Time {

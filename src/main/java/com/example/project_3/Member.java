@@ -1,7 +1,7 @@
-package fitness;
+package com.example.project_3;
 
 /**
- * The Member class represents a fitness club member.
+ * The Member class represents a com.example.project_3.fitness club member.
  * Author: Omkar Kadam, Colin Lee
  */
 public class Member implements Comparable < Member > {

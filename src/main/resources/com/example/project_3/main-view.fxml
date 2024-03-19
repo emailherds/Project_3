@@ -55,18 +55,18 @@
                                        </VBox>
                                        <VBox prefHeight="81.0" prefWidth="389.0" spacing="10.0">
                                           <children>
-                                             <TextField promptText="Type here..." />
-                                             <TextField promptText="Type here..." />
+                                             <TextField fx:id="firstNameMem" promptText="first name" />
+                                             <TextField fx:id="lastNameMem" promptText="last name" />
                                              <HBox prefHeight="46.0" prefWidth="383.0">
                                                 <children>
-                                                   <DatePicker prefHeight="37.0" prefWidth="176.0" promptText="Type here...">
+                                                   <DatePicker fx:id="dobMem" prefHeight="37.0" prefWidth="176.0" promptText="date of birth">
                                                       <HBox.margin>
                                                          <Insets right="10.0" />
                                                       </HBox.margin>
                                                    </DatePicker>
                                                    <HBox alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="197.0">
                                                       <children>
-                                                         <Button mnemonicParsing="false" text="Cancel Existing" />
+                                                         <Button mnemonicParsing="false" onAction="#onCancelExistingButtonClick" text="Cancel Existing" />
                                                       </children>
                                                    </HBox>
                                                 </children>
@@ -144,8 +144,8 @@
                                              </VBox>
                                              <HBox prefHeight="41.0" prefWidth="384.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                                 <children>
-                                                   <Button mnemonicParsing="false" text="Add New" />
-                                                   <Button mnemonicParsing="false" text="Load Members" />
+                                                   <Button mnemonicParsing="false" onAction="#onAddNewButtonClick" text="Add New" />
+                                                   <Button mnemonicParsing="false" onAction="#onLoadMembersButtonClick" text="Load Members" />
                                                 </children>
                                                 <padding>
                                                    <Insets top="20.0" />
@@ -240,19 +240,19 @@
                                           <children>
                                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                                                 <children>
-                                                   <RadioButton mnemonicParsing="false" text="Bridgewater">
+                                                   <RadioButton fx:id="bridgewater" mnemonicParsing="false" text="Bridgewater">
                                                       <toggleGroup>
                                                          <ToggleGroup fx:id="location_group" />
                                                       </toggleGroup>
                                                    </RadioButton>
-                                                   <RadioButton mnemonicParsing="false" text="Edison" toggleGroup="$location_group" />
-                                                   <RadioButton mnemonicParsing="false" text="Franklin" toggleGroup="$location_group" />
+                                                   <RadioButton fx:id="edison" mnemonicParsing="false" text="Edison" toggleGroup="$location_group" />
+                                                   <RadioButton fx:id="franklin" mnemonicParsing="false" text="Franklin" toggleGroup="$location_group" />
                                                 </children>
                                              </HBox>
                                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                                                 <children>
-                                                   <RadioButton mnemonicParsing="false" text="Piscataway" toggleGroup="$location_group" />
-                                                   <RadioButton mnemonicParsing="false" text="Somerville" toggleGroup="$location_group" />
+                                                   <RadioButton fx:id="piscataway" mnemonicParsing="false" text="Piscataway" toggleGroup="$location_group" />
+                                                   <RadioButton fx:id="somerville" mnemonicParsing="false" text="Somerville" toggleGroup="$location_group" />
                                                 </children>
                                              </HBox>
                                           </children>
@@ -261,17 +261,17 @@
                                           <children>
                                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                                                 <children>
-                                                   <TextField prefHeight="26.0" prefWidth="193.0" promptText="first name" />
+                                                   <TextField fx:id="firstNameClass" prefHeight="26.0" prefWidth="193.0" promptText="first name" />
                                                    <HBox alignment="CENTER_RIGHT" prefHeight="51.0" prefWidth="283.0">
                                                       <children>
-                                                         <TextField prefHeight="26.0" prefWidth="205.0" promptText="last name" />
+                                                         <TextField fx:id="lastNameClass" prefHeight="26.0" prefWidth="205.0" promptText="last name" />
                                                       </children>
                                                    </HBox>
                                                 </children>
                                              </HBox>
                                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                                                 <children>
-                                                   <DatePicker prefHeight="26.0" prefWidth="214.0" promptText="date of birth" />
+                                                   <DatePicker fx:id="dobClass" prefHeight="26.0" prefWidth="214.0" promptText="date of birth" />
                                                    <HBox alignment="CENTER_RIGHT" prefHeight="51.0" prefWidth="243.0" spacing="10.0">
                                                       <children>
                                                          <Label text="Guest Pass Remaining:">
@@ -288,7 +288,7 @@
                                        </VBox>
                                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                           <children>
-                                             <Button mnemonicParsing="false" text="Add Member" />
+                                             <Button mnemonicParsing="false" onAction="#onAddMemberButtonClick" text="Add Member" />
                                              <Button mnemonicParsing="false" text="Remove Member" />
                                              <Button mnemonicParsing="false" text="Add Guest" />
                                              <Button mnemonicParsing="false" text="Remove Guest" />
@@ -361,5 +361,5 @@
          </TabPane>
       </top>
    </BorderPane>
-   <TextArea prefHeight="292.0" prefWidth="641.0" text="bruh&#10;" />
+   <TextArea fx:id="bottomText" prefHeight="292.0" prefWidth="641.0" text="bruh&#10;" />
 </VBox>

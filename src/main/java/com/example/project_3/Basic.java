@@ -1,4 +1,4 @@
-package fitness;
+package com.example.project_3;
 
 /**
  * The Basic class represents a basic membership for a member.

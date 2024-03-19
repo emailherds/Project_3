@@ -1,7 +1,7 @@
-package fitness;
+package com.example.project_3;
 
 /**
- * The Family class represents a family membership at the fitness club.
+ * The Family class represents a family membership at the com.example.project_3.fitness club.
  * @author Omkar Kadam, Colin Lee
  */
 public class Family extends Member {
