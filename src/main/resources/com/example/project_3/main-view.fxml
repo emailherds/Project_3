@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" prefHeight="752.0" prefWidth="681.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_3.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <BorderPane prefHeight="200.0" prefWidth="200.0">
+      <top>
+         <TabPane prefHeight="411.0" prefWidth="641.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="TOP_CENTER">
+           <tabs>
+             <Tab text="Membership">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <VBox layoutX="14.0" layoutY="14.0" prefHeight="393.0" prefWidth="559.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <children>
+                                 <HBox prefHeight="124.0" prefWidth="559.0">
+                                    <VBox.margin>
+                                       <Insets />
+                                    </VBox.margin>
+                                    <padding>
+                                       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                    <children>
+                                       <VBox prefHeight="80.0" prefWidth="163.0">
+                                          <children>
+                                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Membership Profile">
+                                                <font>
+                                                   <Font size="14.0" />
+                                                </font>
+                                             </Text>
+                                          </children>
+                                       </VBox>
+                                       <VBox prefHeight="81.0" prefWidth="389.0" spacing="10.0">
+                                          <children>
+                                             <TextField promptText="Type here..." />
+                                             <TextField promptText="Type here..." />
+                                             <HBox prefHeight="46.0" prefWidth="383.0">
+                                                <children>
+                                                   <DatePicker prefHeight="37.0" prefWidth="176.0" promptText="Type here...">
+                                                      <HBox.margin>
+                                                         <Insets right="10.0" />
+                                                      </HBox.margin>
+                                                   </DatePicker>
+                                                   <HBox alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="197.0">
+                                                      <children>
+                                                         <Button mnemonicParsing="false" text="Cancel Existing" />
+                                                      </children>
+                                                   </HBox>
+                                                </children>
+                                             </HBox>
+                                          </children>
+                                       </VBox>
+                                    </children>
+                                 </HBox>
+                                 <HBox prefHeight="252.0" prefWidth="559.0" spacing="10.0">
+                                    <padding>
+                                       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                    <children>
+                                       <GridPane prefHeight="218.0" prefWidth="539.0">
+                                         <columnConstraints>
+                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="10.0" prefWidth="155.0" />
+                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.0" minWidth="10.0" prefWidth="384.0" />
+                                         </columnConstraints>
+                                         <rowConstraints>
+                                           <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="97.0" vgrow="SOMETIMES" />
+                                           <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                                           <RowConstraints maxHeight="178.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+                                         </rowConstraints>
+                                          <children>
+                                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Member Type" />
+                                             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                                                <children>
+                                                   <HBox alignment="CENTER" prefHeight="91.0" prefWidth="223.0" spacing="10.0">
+                                                      <children>
+                                                         <RadioButton mnemonicParsing="false" text="Basic">
+                                                            <toggleGroup>
+                                                               <ToggleGroup fx:id="member_type" />
+                                                            </toggleGroup>
+                                                         </RadioButton>
+                                                         <RadioButton mnemonicParsing="false" text="Family" toggleGroup="$member_type" />
+                                                         <RadioButton mnemonicParsing="false" text="Premium" toggleGroup="$member_type" />
+                                                      </children>
+                                                   </HBox>
+                                                   <HBox alignment="CENTER_RIGHT" prefHeight="91.0" prefWidth="180.0" spacing="10.0">
+                                                      <children>
+                                                         <Label text="Guest Pass:">
+                                                            <font>
+                                                               <Font size="14.0" />
+                                                            </font>
+                                                            <HBox.margin>
+                                                               <Insets left="10.0" />
+                                                            </HBox.margin>
+                                                         </Label>
+                                                         <TextField prefHeight="26.0" prefWidth="27.0" />
+                                                      </children>
+                                                   </HBox>
+                                                </children>
+                                             </HBox>
+                                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Home Studio" GridPane.rowIndex="1" />
+                                             <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <children>
+                                                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                                      <children>
+                                                         <RadioButton mnemonicParsing="false" text="Bridgewater">
+                                                            <toggleGroup>
+                                                               <ToggleGroup fx:id="home_studio" />
+                                                            </toggleGroup>
+                                                         </RadioButton>
+                                                         <RadioButton mnemonicParsing="false" text="Edison" toggleGroup="$home_studio" />
+                                                         <RadioButton mnemonicParsing="false" text="Franklin" toggleGroup="$home_studio" />
+                                                      </children>
+                                                   </HBox>
+                                                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                                      <children>
+                                                         <RadioButton mnemonicParsing="false" text="Piscataway" toggleGroup="$home_studio" />
+                                                         <RadioButton mnemonicParsing="false" text="Somerville" toggleGroup="$home_studio" />
+                                                      </children>
+                                                   </HBox>
+                                                </children>
+                                             </VBox>
+                                             <HBox prefHeight="41.0" prefWidth="384.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                <children>
+                                                   <Button mnemonicParsing="false" text="Add New" />
+                                                   <Button mnemonicParsing="false" text="Load Members" />
+                                                </children>
+                                                <padding>
+                                                   <Insets top="20.0" />
+                                                </padding>
+                                             </HBox>
+                                          </children>
+                                       </GridPane>
+                                    </children>
+                                 </HBox>
+                              </children>
+                           </VBox>
+                        </children>
+                     </AnchorPane>
+               </content>
+             </Tab>
+             <Tab text="Class Attendance">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <VBox layoutX="6.0" layoutY="5.0" prefHeight="410.0" prefWidth="581.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <children>
+                                 <GridPane prefHeight="416.0" prefWidth="641.0">
+                                   <columnConstraints>
+                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" prefWidth="133.0" />
+                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="508.0" minWidth="10.0" prefWidth="508.0" />
+                                   </columnConstraints>
+                                   <rowConstraints>
+                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                     <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                                       <RowConstraints maxHeight="102.0" minHeight="10.0" prefHeight="94.0" vgrow="SOMETIMES" />
+                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                   </rowConstraints>
+                                    <children>
+                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Class">
+                                          <font>
+                                             <Font size="14.0" />
+                                          </font>
+                                          <GridPane.margin>
+                                             <Insets left="10.0" />
+                                          </GridPane.margin>
+                                       </Text>
+                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Instructor" GridPane.rowIndex="1">
+                                          <font>
+                                             <Font size="14.0" />
+                                          </font>
+                                          <GridPane.margin>
+                                             <Insets left="10.0" />
+                                          </GridPane.margin>
+                                       </Text>
+                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Location" GridPane.rowIndex="2">
+                                          <font>
+                                             <Font size="14.0" />
+                                          </font>
+                                          <GridPane.margin>
+                                             <Insets left="10.0" />
+                                          </GridPane.margin>
+                                       </Text>
+                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Member" GridPane.rowIndex="3">
+                                          <font>
+                                             <Font size="14.0" />
+                                          </font>
+                                          <GridPane.margin>
+                                             <Insets left="10.0" />
+                                          </GridPane.margin>
+                                       </Text>
+                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
+                                          <children>
+                                             <RadioButton mnemonicParsing="false" text="Pilates">
+                                                <toggleGroup>
+                                                   <ToggleGroup fx:id="class_group" />
+                                                </toggleGroup>
+                                             </RadioButton>
+                                             <RadioButton mnemonicParsing="false" text="Spinning" toggleGroup="$class_group" />
+                                             <RadioButton mnemonicParsing="false" text="Cardio" toggleGroup="$class_group" />
+                                          </children>
+                                       </HBox>
+                                       <HBox alignment="CENTER_LEFT" prefHeight="77.0" prefWidth="450.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                          <children>
+                                             <RadioButton mnemonicParsing="false" text="Jennifer">
+                                                <toggleGroup>
+                                                   <ToggleGroup fx:id="instructor_group" />
+                                                </toggleGroup>
+                                             </RadioButton>
+                                             <RadioButton mnemonicParsing="false" text="Kim" toggleGroup="$instructor_group" />
+                                             <RadioButton mnemonicParsing="false" text="Denise" toggleGroup="$instructor_group" />
+                                             <RadioButton mnemonicParsing="false" text="Davis" toggleGroup="$instructor_group" />
+                                             <RadioButton mnemonicParsing="false" text="Emma" toggleGroup="$instructor_group" />
+                                          </children>
+                                       </HBox>
+                                       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                          <children>
+                                             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                                <children>
+                                                   <RadioButton mnemonicParsing="false" text="Bridgewater">
+                                                      <toggleGroup>
+                                                         <ToggleGroup fx:id="location_group" />
+                                                      </toggleGroup>
+                                                   </RadioButton>
+                                                   <RadioButton mnemonicParsing="false" text="Edison" toggleGroup="$location_group" />
+                                                   <RadioButton mnemonicParsing="false" text="Franklin" toggleGroup="$location_group" />
+                                                </children>
+                                             </HBox>
+                                             <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                                <children>
+                                                   <RadioButton mnemonicParsing="false" text="Piscataway" toggleGroup="$location_group" />
+                                                   <RadioButton mnemonicParsing="false" text="Somerville" toggleGroup="$location_group" />
+                                                </children>
+                                             </HBox>
+                                          </children>
+                                       </VBox>
+                                       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                          <children>
+                                             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                <children>
+                                                   <TextField prefHeight="26.0" prefWidth="193.0" promptText="first name" />
+                                                   <HBox alignment="CENTER_RIGHT" prefHeight="51.0" prefWidth="283.0">
+                                                      <children>
+                                                         <TextField prefHeight="26.0" prefWidth="205.0" promptText="last name" />
+                                                      </children>
+                                                   </HBox>
+                                                </children>
+                                             </HBox>
+                                             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                                <children>
+                                                   <DatePicker prefHeight="26.0" prefWidth="214.0" promptText="date of birth" />
+                                                   <HBox alignment="CENTER_RIGHT" prefHeight="51.0" prefWidth="243.0" spacing="10.0">
+                                                      <children>
+                                                         <Label text="Guest Pass Remaining:">
+                                                            <font>
+                                                               <Font size="14.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <TextField prefHeight="26.0" prefWidth="27.0" />
+                                                      </children>
+                                                   </HBox>
+                                                </children>
+                                             </HBox>
+                                          </children>
+                                       </VBox>
+                                       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                          <children>
+                                             <Button mnemonicParsing="false" text="Add Member" />
+                                             <Button mnemonicParsing="false" text="Remove Member" />
+                                             <Button mnemonicParsing="false" text="Add Guest" />
+                                             <Button mnemonicParsing="false" text="Remove Guest" />
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </GridPane>
+                              </children>
+                           </VBox>
+                        </children>
+                     </AnchorPane>
+               </content>
+             </Tab>
+               <Tab text="Class Schedule">
+                 <content>
+                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <VBox layoutX="221.0" layoutY="36.0" prefHeight="353.0" prefWidth="641.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <children>
+                                 <TableView prefHeight="300.0" prefWidth="561.0">
+                                   <columns>
+                                     <TableColumn prefWidth="75.0" text="Time" />
+                                     <TableColumn prefWidth="152.0" text="Class Name" />
+                                       <TableColumn prefWidth="159.0" text="Instructor" />
+                                       <TableColumn prefWidth="254.0" text="Studio Location" />
+                                   </columns>
+                                    <VBox.margin>
+                                       <Insets bottom="10.0" top="10.0" />
+                                    </VBox.margin>
+                                 </TableView>
+                                 <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                       <Button mnemonicParsing="false" text="Load Schedule" />
+                                    </children>
+                                 </HBox>
+                              </children>
+                           </VBox>
+                        </children>
+                     </AnchorPane>
+                 </content>
+               </Tab>
+               <Tab text="Studio Location">
+                 <content>
+                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <VBox prefHeight="355.0" prefWidth="641.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <children>
+                                 <TableView prefHeight="335.0" prefWidth="594.0">
+                                    <columns>
+                                       <TableColumn prefWidth="183.0" text="City" />
+                                       <TableColumn prefWidth="242.0" text="County" />
+                                       <TableColumn minWidth="0.0" prefWidth="195.0" text="Zip Code" />
+                                    </columns>
+                                    <VBox.margin>
+                                       <Insets bottom="10.0" top="10.0" />
+                                    </VBox.margin>
+                                 </TableView>
+                              </children>
+                           </VBox>
+                        </children>
+                     </AnchorPane>
+                 </content>
+               </Tab>
+               <Tab text="Untitled Tab">
+                 <content>
+                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                 </content>
+               </Tab>
+           </tabs>
+         </TabPane>
+      </top>
+   </BorderPane>
+   <TextArea prefHeight="292.0" prefWidth="641.0" text="bruh&#10;" />
+</VBox>
