@@ -27,7 +27,40 @@ public enum Location {
             case SOMERVILLE:
                 return "SOMERVILLE";
             default:
-                return "Unknown";
+                return "";
         }
+    }
+    public String getCounty() {
+        if (this.toString().toLowerCase().equals("bridgewater") ||
+                this.toString().toLowerCase().equals("franklin") ||
+                this.toString().toLowerCase().equals("somerville")) {
+            return "SOMERSET";
+        }
+        else if (this.toString().toLowerCase().equals("edison") ||
+                this.toString().toLowerCase().equals("piscataway")){
+            return "MIDDLESEX";
+        }
+        return "";
+    }
+
+    /**
+     * Gets the zip code based on the home studio location of the member.
+     *
+     * @return The zip code of the home studio location
+     */
+    public String getZipCode() {
+        switch (this.toString().toLowerCase()) {
+            case "bridgewater":
+                return "08807";
+            case "edison":
+                return "08837";
+            case "franklin":
+                return "08873";
+            case "piscataway":
+                return "08854";
+            case "somerville":
+                return "08876";
+        }
+        return "";
     }
 }

@@ -59,7 +59,7 @@
                                              <TextField fx:id="lastNameMem" promptText="last name" />
                                              <HBox prefHeight="46.0" prefWidth="383.0">
                                                 <children>
-                                                   <DatePicker fx:id="dobMem" prefHeight="37.0" prefWidth="176.0" promptText="date of birth">
+                                                   <DatePicker fx:id="dobMem" editable="false" prefHeight="37.0" prefWidth="176.0" promptText="date of birth">
                                                       <HBox.margin>
                                                          <Insets right="10.0" />
                                                       </HBox.margin>
@@ -289,9 +289,9 @@
                                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                           <children>
                                              <Button mnemonicParsing="false" onAction="#onAddMemberButtonClick" text="Add Member" />
-                                             <Button mnemonicParsing="false" text="Remove Member" />
-                                             <Button mnemonicParsing="false" text="Add Guest" />
-                                             <Button mnemonicParsing="false" text="Remove Guest" />
+                                             <Button mnemonicParsing="false" onAction="#onRemoveMemberButtonClick" text="Remove Member" />
+                                             <Button mnemonicParsing="false" onAction="#onAddGuestButtonClick" text="Add Guest" />
+                                             <Button mnemonicParsing="false" onAction="#onRemoveGuestButtonClick" text="Remove Guest" />
                                           </children>
                                        </HBox>
                                     </children>
@@ -308,12 +308,12 @@
                         <children>
                            <VBox layoutX="221.0" layoutY="36.0" prefHeight="353.0" prefWidth="641.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                               <children>
-                                 <TableView prefHeight="300.0" prefWidth="561.0">
+                                 <TableView fx:id="tableViewClass" prefHeight="300.0" prefWidth="561.0">
                                    <columns>
-                                     <TableColumn prefWidth="75.0" text="Time" />
-                                     <TableColumn prefWidth="152.0" text="Class Name" />
-                                       <TableColumn prefWidth="159.0" text="Instructor" />
-                                       <TableColumn prefWidth="254.0" text="Studio Location" />
+                                     <TableColumn fx:id="timeCol" prefWidth="75.0" text="Time" />
+                                     <TableColumn fx:id="classNameCol" prefWidth="152.0" text="Class Name" />
+                                       <TableColumn fx:id="instructorCol" prefWidth="159.0" text="Instructor" />
+                                       <TableColumn fx:id="studioLocationCol" prefWidth="254.0" text="Studio Location" />
                                    </columns>
                                     <VBox.margin>
                                        <Insets bottom="10.0" top="10.0" />
@@ -321,7 +321,7 @@
                                  </TableView>
                                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                                     <children>
-                                       <Button mnemonicParsing="false" text="Load Schedule" />
+                                       <Button mnemonicParsing="false" onAction="#onLoadScheduleButtonClick" text="Load Schedule" />
                                     </children>
                                  </HBox>
                               </children>
@@ -336,11 +336,11 @@
                         <children>
                            <VBox prefHeight="355.0" prefWidth="641.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                               <children>
-                                 <TableView prefHeight="335.0" prefWidth="594.0">
+                                 <TableView fx:id="locView" prefHeight="335.0" prefWidth="594.0">
                                     <columns>
-                                       <TableColumn prefWidth="183.0" text="City" />
-                                       <TableColumn prefWidth="242.0" text="County" />
-                                       <TableColumn minWidth="0.0" prefWidth="195.0" text="Zip Code" />
+                                       <TableColumn fx:id="cityCol" prefWidth="183.0" text="City" />
+                                       <TableColumn fx:id="countyCol" prefWidth="242.0" text="County" />
+                                       <TableColumn fx:id="zipCol" minWidth="0.0" prefWidth="195.0" text="Zip Code" />
                                     </columns>
                                     <VBox.margin>
                                        <Insets bottom="10.0" top="10.0" />

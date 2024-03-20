@@ -91,6 +91,14 @@ public class FitnessClass {
 
     // Getters and setters for class attributes
 
+    /**
+     * Sets the class
+     *
+     * @param classInfo The class to set
+     */
+    public void setClass(Offer classInfo) {
+        this.classInfo = classInfo;
+    }
 
     /**
      * Sets the instructor
