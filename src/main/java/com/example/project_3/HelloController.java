@@ -13,6 +13,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Collection;
 import java.util.stream.Collectors;
+/**
+ * HelloController manages the user interface interactions within the fitness club application.
+ * It handles operations like adding new members, scheduling classes, managing member information, and loading data.
+ * Authors: Omkar Kadam, Colin Lee
+ */
 
 public class HelloController {
     @FXML
@@ -81,7 +86,10 @@ public class HelloController {
     private Date dob;
     private MemberList mL;
     private Schedule s;
-
+    /**
+     * Initializes the controller class and sets up the initial state of the UI components.
+     * This method is automatically called after the FXML fields have been injected.
+     */
     public void initialize() {
         mL = new MemberList();
         s = new Schedule();
@@ -91,12 +99,9 @@ public class HelloController {
         zipCol.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getZipCode()));
         locView.getItems().addAll(Location.values());
     }
-
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
-
+    /**
+     * Adds a new member to the member list based on the form data.
+     */
     @FXML
     protected void onAddNewButtonClick() {
         Date today = new Date(2, 15, 2004);
@@ -167,32 +172,45 @@ public class HelloController {
         }
 
     }
-
+    /**
+     * Prints the profiles of all members sorted by their names.
+     */
     @FXML
     protected void OnPrintProfileButtonClick(){
         bottomText.setText(mL.printByMember());
     }
-
+    /**
+     * Prints the members sorted by county.
+     */
     @FXML
     protected void OnPrintCountyButtonClick(){
         bottomText.setText(mL.printByCounty());
     }
-
+    /**
+     * Prints the due fees for all members.
+     */
     @FXML
     protected void OnPrintDuesButtonClick(){
         bottomText.setText(mL.printFees());
     }
-
+    /**
+     * Clears the information displayed in the bottom text area.
+     */
     @FXML
     protected void OnClearAreaButtonClick(){
         bottomText.setText("...");
     }
-
+    /**
+     * Displays the current schedule of fitness classes.
+     */
     @FXML
     protected void OnScheduleButtonClick(){
         bottomText.setText(s.print());
     }
 
+    /**
+     * Cancels the existing membership for a member specified in the form.
+     */
     @FXML
     protected void onCancelExistingButtonClick() {
         if(firstNameMem != null)
@@ -205,7 +223,9 @@ public class HelloController {
             if (mL.findM(fname, lname, dob) != null)
                 mL.remove(mL.findM(fname, lname, dob));
     }
-
+    /**
+     * Loads member data from a selected file and updates the member list.
+     */
     @FXML
     protected void onLoadMembersButtonClick() throws IOException {
         FileChooser fc = new FileChooser();
@@ -219,7 +239,7 @@ public class HelloController {
             return;
         }
 
-        bottomText.setText("Members Successfully Loaded!");
+        OnPrintProfileButtonClick();
 
 
         /*
@@ -245,7 +265,9 @@ public class HelloController {
         */
 
     }
-
+    /**
+     * Adds a member to a selected fitness class.
+     */
     @FXML
     protected void onAddMemberButtonClick() {
         Date today = new Date(2, 15, 2004);
@@ -340,7 +362,9 @@ public class HelloController {
             bottomText.setText(fname + " " + lname + " attendance recorded " + offer + " at " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
         }
     }
-
+    /**
+     * Removes a member from a selected fitness class.
+     */
     @FXML
     protected void onRemoveMemberButtonClick() {
         if(class_group.getSelectedToggle() != null) {
@@ -399,6 +423,10 @@ public class HelloController {
         } else
             bottomText.setText(fname + " " + lname + " is not in " + instructor + ", " + fitnessClass.getTime() + ", " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
     }
+
+    /**
+     * Adds a guest to a selected fitness class.
+     */
     @FXML
     protected void onAddGuestButtonClick() {
         if(class_group.getSelectedToggle() != null) {
@@ -492,7 +520,9 @@ public class HelloController {
         bottomText.setText(fname + " " + lname + " (guest) attendance recorded " + offer + " at " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
         return;
     }
-
+    /**
+     * Removes a guest from a selected fitness class and updates the guest pass status accordingly.
+     */
     @FXML
     protected void onRemoveGuestButtonClick() {
         if (class_group.getSelectedToggle() != null) {
@@ -557,7 +587,9 @@ public class HelloController {
         } else
             bottomText.setText(fname + " " + lname + " (guest) is not in " + instructor + ", " + fitnessClass.getTime() + ", " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
     }
-
+    /**
+     * Loads the schedule of fitness classes from a selected file and updates the schedule view.
+     */
     @FXML
     protected void onLoadScheduleButtonClick() throws IOException {
         FileChooser fileChooser = new FileChooser();

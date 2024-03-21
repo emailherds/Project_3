@@ -10,6 +10,10 @@ public class Date implements Comparable < Date > {
     public static final int QUATERCENTENNIAL = 400;
     public static final int THIRTYONE = 31;
     public static final int THIRTY = 30;
+
+    public static final int TWENTYEIGHT = 28;
+    public static final int TWENTYNINE = 29;
+
     public static final int MONTHSINYEAR = 12;
     public static final int EIGHTEEN = 18;
 
@@ -108,9 +112,9 @@ public class Date implements Comparable < Date > {
         int days = 0;
         int february;
         if (this.isLeap())
-            february = 29;
+            february = TWENTYNINE;
         else
-            february = 28;
+            february = TWENTYEIGHT;
         days =
                 switch (this.getMonth()) {
                     case 1 -> THIRTYONE;
@@ -161,9 +165,9 @@ public class Date implements Comparable < Date > {
         int days = 0;
         int february;
         if (leap)
-            february = 29;
+            february = TWENTYNINE;
         else
-            february = 28;
+            february = TWENTYEIGHT;
         days =
                 switch (this.getMonth()) {
                     case 1 -> THIRTYONE;
