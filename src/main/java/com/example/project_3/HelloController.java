@@ -122,21 +122,55 @@ public class HelloController {
             memberType = selected.getText();
             bottomText.setText(memberType);
             switch(memberType){
-                case "BASIC":
+                case "Basic":
                     Basic newBasic = new Basic((new Profile(fname, lname, dob)), today.getNextDate(1), location, 0);
-                    mL.add(newBasic);
+                    if (mL.add(newBasic))
+                        System.out.println(fname + " " + lname + " added.");
+                    else
+                        System.out.println(fname + " " + lname + " is already in the member database.");
                     break;
-                case "FAMILY":
+                case "Family":
                     Family newFamily = new Family((new Profile(fname, lname, dob)), today.getNextDate(3), location, true);
-                    mL.add(newFamily);
+                    if (mL.add(newFamily))
+                        System.out.println(fname + " " + lname + " added.");
+                    else
+                        System.out.println(fname + " " + lname + " is already in the member database.");
                     break;
-                case "PREMIUM":
+                case "Premium":
                     Premium newPremium = new Premium((new Profile(fname, lname, dob)), today.getNextDate(12), location, 3);
-                    mL.add(newPremium);
+                    if (mL.add(newPremium))
+                        System.out.println(fname + " " + lname + " added.");
+                    else
+                        System.out.println(fname + " " + lname + " is already in the member database.");
                     break;
             }
         }
 
+    }
+
+    @FXML
+    protected void OnPrintProfileButtonClick(){
+        bottomText.setText(mL.printByMember());
+    }
+
+    @FXML
+    protected void OnPrintCountyButtonClick(){
+        bottomText.setText(mL.printByCounty());
+    }
+
+    @FXML
+    protected void OnPrintDuesButtonClick(){
+        bottomText.setText(mL.printFees());
+    }
+
+    @FXML
+    protected void OnClearAreaButtonClick(){
+        bottomText.setText("...");
+    }
+
+    @FXML
+    protected void OnScheduleButtonClick(){
+        bottomText.setText(s.print());
     }
 
     @FXML
@@ -164,6 +198,9 @@ public class HelloController {
             System.out.println("file invalid");
             return;
         }
+
+        bottomText.setText("Members Successfully Loaded!");
+
 
         /*
         Collection<FitnessClass> list = Files.readAllLines(selectedFile.toPath())
@@ -504,7 +541,7 @@ public class HelloController {
             s.load(selectedFile.getAbsoluteFile());
         }
         else{
-            System.out.println("file invalid");
+            System.out.println("Invalid File");
             return;
         }
 
@@ -529,6 +566,8 @@ public class HelloController {
         studioLocationCol.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getStudio().toString()));
 
         tableViewClass.setItems(details);
+
+        bottomText.setText("Schedule Successfully Loaded!");
 
     }
 
