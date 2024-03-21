@@ -298,7 +298,7 @@ public class HelloController {
             } else if (!s.contains(fitnessClass)) {
                 bottomText.setText("Fitness class is not on the schedule.");
                 return;
-            } else if (m.getClass().toString().equals("class fitness.Basic") && !location.equals(m.getHomeStudio())) {
+            } else if (m.getClass().toString().equals("class com.example.project_3.Basic") && !location.equals(m.getHomeStudio())) {
                 bottomText.setText(fname + " " + lname + " is attending a class at " + location + " - " + "[BASIC] home studio at " + m.getHomeStudio());
                 return;
             } else if (conflict) { // Time Conflict
@@ -311,7 +311,7 @@ public class HelloController {
                 bottomText.setText(fname + " " + lname + " is already in the class.");
                 return;
             }
-            if (m.getClass().toString().equals("class fitness.Basic")) {
+            if (m.getClass().toString().equals("class com.example.project_3.Basic")) {
                 ((Basic) m).setNumClasses(((Basic) m).getNumClasses() + 1);
             }
             classMembers = fitnessClass.getMembers();
@@ -429,6 +429,7 @@ public class HelloController {
 
 
         String type = m.getClass().toString();
+        System.out.println(type);
         if (m == null) {
             bottomText.setText(fname + " " + lname + " " + dob + " is not in the member database.");
             return;
@@ -438,14 +439,14 @@ public class HelloController {
         } else if (!s.contains(fitnessClass)) {
             bottomText.setText("Fitness class is not on the schedule.");
             return;
-        } else if (type.equals("class fitness.Basic")) {
+        } else if (type.equals("class com.example.project_3.Basic")) {
             bottomText.setText(fname + " " + lname + " [BASIC] - no guest pass.");
             return;
         } else if (!location.equals(m.getHomeStudio())) {
             bottomText.setText(fname + " " + lname + " (guest) is attending a class at " + location + " - " + "home studio at " + m.getHomeStudio());
             return;
         }
-        if (type.equals("class fitness.Family")) {
+        if (type.equals("class com.example.project_3.Family")) {
             if (!((Family) m).isGuest()) {
                 bottomText.setText(fname + " " + lname + " guest pass not available.");
                 return;
@@ -453,7 +454,7 @@ public class HelloController {
                 ((Family) m).setGuest(false);
             }
         }
-        if (type.equals("class fitness.Premium")) {
+        if (type.equals("class com.example.project_3.Premium")) {
             if (((Premium) m).getGuestPass() <= 0) {
                 bottomText.setText(fname + " " + lname + " guest pass not available.");
                 return;
@@ -520,10 +521,10 @@ public class HelloController {
             classGuests.remove(m);
             fitnessClass.setGuests(classGuests);
             String type1 = m.getClass().toString();
-            if (type1.equals("class fitness.Family")) {
+            if (type1.equals("class com.example.project_3.Family")) {
                 ((Family) m).setGuest(true);
             }
-            if (type1.equals("class fitness.Premium")) {
+            if (type1.equals("class com.example.project_3.Premium")) {
                 ((Premium) m).setGuestPass(((Premium) m).getGuestPass() + 1);
             }
 
