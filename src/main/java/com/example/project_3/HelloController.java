@@ -125,23 +125,23 @@ public class HelloController {
                 case "Basic":
                     Basic newBasic = new Basic((new Profile(fname, lname, dob)), today.getNextDate(1), location, 0);
                     if (mL.add(newBasic))
-                        System.out.println(fname + " " + lname + " added.");
+                        bottomText.setText(fname + " " + lname + " added.");
                     else
-                        System.out.println(fname + " " + lname + " is already in the member database.");
+                        bottomText.setText(fname + " " + lname + " is already in the member database.");
                     break;
                 case "Family":
                     Family newFamily = new Family((new Profile(fname, lname, dob)), today.getNextDate(3), location, true);
                     if (mL.add(newFamily))
-                        System.out.println(fname + " " + lname + " added.");
+                        bottomText.setText(fname + " " + lname + " added.");
                     else
-                        System.out.println(fname + " " + lname + " is already in the member database.");
+                        bottomText.setText(fname + " " + lname + " is already in the member database.");
                     break;
                 case "Premium":
                     Premium newPremium = new Premium((new Profile(fname, lname, dob)), today.getNextDate(12), location, 3);
                     if (mL.add(newPremium))
-                        System.out.println(fname + " " + lname + " added.");
+                        bottomText.setText(fname + " " + lname + " added.");
                     else
-                        System.out.println(fname + " " + lname + " is already in the member database.");
+                        bottomText.setText(fname + " " + lname + " is already in the member database.");
                     break;
             }
         }
@@ -195,7 +195,7 @@ public class HelloController {
             mL.load(selectedFile.getAbsoluteFile());
         }
         else{
-            System.out.println("file invalid");
+            bottomText.setText("file invalid");
             return;
         }
 
@@ -266,14 +266,14 @@ public class HelloController {
         Time t = s.findFitnessClass(offer, instructor, location);
         FitnessClass fitnessClass = s.findFitnessClassA(offer, instructor, location, t);
         if (fitnessClass == null) {
-            System.out.println(fitnessClass + " does not exist at ");
+            bottomText.setText(fitnessClass + " does not exist at ");
             return;
         }
         MemberList classMembers = new MemberList();
         MemberList classGuests = new MemberList();
         Member m = mL.findM(fname, lname, dob);
         if (m == null) {
-            System.out.println(fname + " " + lname + " " + dob + " is not in the member database.");
+            bottomText.setText(fname + " " + lname + " " + dob + " is not in the member database.");
             return;
         }
         boolean conflict = false;
@@ -290,25 +290,25 @@ public class HelloController {
 
         if(fname != null && lname != null && dob != null && offer != null && instructor != null && location != null) {
             if (m == null) {
-                System.out.println(fname + " " + lname + " " + dob + " is not in the member database.");
+                bottomText.setText(fname + " " + lname + " " + dob + " is not in the member database.");
                 return;
             } else if (m.getExpire().compareTo(m.getExpire().currentTime()) < 0) {
-                System.out.println(fname + " " + lname + " " + dob + " membership expired.");
+                bottomText.setText(fname + " " + lname + " " + dob + " membership expired.");
                 return;
             } else if (!s.contains(fitnessClass)) {
-                System.out.println("Fitness class is not on the schedule.");
+                bottomText.setText("Fitness class is not on the schedule.");
                 return;
             } else if (m.getClass().toString().equals("class fitness.Basic") && !location.equals(m.getHomeStudio())) {
-                System.out.println(fname + " " + lname + " is attending a class at " + location + " - " + "[BASIC] home studio at " + m.getHomeStudio());
+                bottomText.setText(fname + " " + lname + " is attending a class at " + location + " - " + "[BASIC] home studio at " + m.getHomeStudio());
                 return;
             } else if (conflict) { // Time Conflict
-                System.out.println("Time conflict - " + fname + " " + lname + " is in another class held at " + t.toString() + " - " + fitnessClass.getInstructor().toString().toUpperCase() + ", " + t + ", " + fitnessClass.getStudio().toString().toUpperCase());
+                bottomText.setText("Time conflict - " + fname + " " + lname + " is in another class held at " + t.toString() + " - " + fitnessClass.getInstructor().toString().toUpperCase() + ", " + t + ", " + fitnessClass.getStudio().toString().toUpperCase());
                 return;
             } else if (!s.contains(fitnessClass)) {
-                System.out.println(fname + " " + lname + " " + dob + " is not in the member database.");
+                bottomText.setText(fname + " " + lname + " " + dob + " is not in the member database.");
                 return;
             } else if (fitnessClass.getMembers().contains(m)) {
-                System.out.println(fname + " " + lname + " is already in the class.");
+                bottomText.setText(fname + " " + lname + " is already in the class.");
                 return;
             }
             if (m.getClass().toString().equals("class fitness.Basic")) {
@@ -317,7 +317,7 @@ public class HelloController {
             classMembers = fitnessClass.getMembers();
             classMembers.add(m);
             fitnessClass.setMembers(classMembers);
-            System.out.println(fname + " " + lname + " attendance recorded " + offer + " at " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
+            bottomText.setText(fname + " " + lname + " attendance recorded " + offer + " at " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
         }
     }
 
@@ -356,14 +356,14 @@ public class HelloController {
         Time t = s.findFitnessClass(offer, instructor, location);
         FitnessClass fitnessClass = s.findFitnessClassA(offer, instructor, location, t);
         if (fitnessClass == null) {
-            System.out.println(fitnessClass + " does not exist at ");
+            bottomText.setText(fitnessClass + " does not exist at ");
             return;
         }
         MemberList classMembers = new MemberList();
         MemberList classGuests = new MemberList();
         Member m = mL.findM(fname, lname, dob);
         if (m == null) {
-            System.out.println(fname + " " + lname + " " + dob + " is not in the member database.");
+            bottomText.setText(fname + " " + lname + " " + dob + " is not in the member database.");
             return;
         }
         boolean conflict = false;
@@ -375,9 +375,9 @@ public class HelloController {
             classMembers = fitnessClass.getMembers();
             classMembers.remove(u);
             fitnessClass.setMembers(classMembers);
-            System.out.println(fname + " " + lname + " is removed from " + instructor + ", " + fitnessClass.getTime() + ", " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
+            bottomText.setText(fname + " " + lname + " is removed from " + instructor + ", " + fitnessClass.getTime() + ", " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
         } else
-            System.out.println(fname + " " + lname + " is not in " + instructor + ", " + fitnessClass.getTime() + ", " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
+            bottomText.setText(fname + " " + lname + " is not in " + instructor + ", " + fitnessClass.getTime() + ", " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
     }
     @FXML
     protected void onAddGuestButtonClick() {
@@ -414,14 +414,14 @@ public class HelloController {
         Time t = s.findFitnessClass(offer, instructor, location);
         FitnessClass fitnessClass = s.findFitnessClassA(offer, instructor, location, t);
         if (fitnessClass == null) {
-            System.out.println(fitnessClass + " does not exist at ");
+            bottomText.setText(fitnessClass + " does not exist at ");
             return;
         }
         MemberList classMembers = new MemberList();
         MemberList classGuests = new MemberList();
         Member m = mL.findM(fname, lname, dob);
         if (m == null) {
-            System.out.println(fname + " " + lname + " " + dob + " is not in the member database.");
+            bottomText.setText(fname + " " + lname + " " + dob + " is not in the member database.");
             return;
         }
         boolean conflict = false;
@@ -430,24 +430,24 @@ public class HelloController {
 
         String type = m.getClass().toString();
         if (m == null) {
-            System.out.println(fname + " " + lname + " " + dob + " is not in the member database.");
+            bottomText.setText(fname + " " + lname + " " + dob + " is not in the member database.");
             return;
         } else if (m.getExpire().compareTo(m.getExpire().currentTime()) < 0) {
-            System.out.println(fname + " " + lname + " " + dob + " membership expired.");
+            bottomText.setText(fname + " " + lname + " " + dob + " membership expired.");
             return;
         } else if (!s.contains(fitnessClass)) {
-            System.out.println("Fitness class is not on the schedule.");
+            bottomText.setText("Fitness class is not on the schedule.");
             return;
         } else if (type.equals("class fitness.Basic")) {
-            System.out.println(fname + " " + lname + " [BASIC] - no guest pass.");
+            bottomText.setText(fname + " " + lname + " [BASIC] - no guest pass.");
             return;
         } else if (!location.equals(m.getHomeStudio())) {
-            System.out.println(fname + " " + lname + " (guest) is attending a class at " + location + " - " + "home studio at " + m.getHomeStudio());
+            bottomText.setText(fname + " " + lname + " (guest) is attending a class at " + location + " - " + "home studio at " + m.getHomeStudio());
             return;
         }
         if (type.equals("class fitness.Family")) {
             if (!((Family) m).isGuest()) {
-                System.out.println(fname + " " + lname + " guest pass not available.");
+                bottomText.setText(fname + " " + lname + " guest pass not available.");
                 return;
             } else {
                 ((Family) m).setGuest(false);
@@ -455,7 +455,7 @@ public class HelloController {
         }
         if (type.equals("class fitness.Premium")) {
             if (((Premium) m).getGuestPass() <= 0) {
-                System.out.println(fname + " " + lname + " guest pass not available.");
+                bottomText.setText(fname + " " + lname + " guest pass not available.");
                 return;
             } else {
                 ((Premium) m).setGuestPass(((Premium) m).getGuestPass() - 1);
@@ -466,7 +466,7 @@ public class HelloController {
         classGuests.add(m);
         fitnessClass.setGuests(classGuests);
 
-        System.out.println(fname + " " + lname + " (guest) attendance recorded " + offer + " at " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
+        bottomText.setText(fname + " " + lname + " (guest) attendance recorded " + offer + " at " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
     }
 
     @FXML
@@ -502,14 +502,14 @@ public class HelloController {
         Time t = s.findFitnessClass(offer, instructor, location);
         FitnessClass fitnessClass = s.findFitnessClassA(offer, instructor, location, t);
         if (fitnessClass == null) {
-            System.out.println(fitnessClass + " does not exist at ");
+            bottomText.setText(fitnessClass + " does not exist at ");
             return;
         }
         MemberList classMembers = new MemberList();
         MemberList classGuests = new MemberList();
         Member m = mL.findM(fname, lname, dob);
         if (m == null) {
-            System.out.println(fname + " " + lname + " " + dob + " is not in the member database.");
+            bottomText.setText(fname + " " + lname + " " + dob + " is not in the member database.");
             return;
         }
         boolean conflict = false;
@@ -527,9 +527,9 @@ public class HelloController {
                 ((Premium) m).setGuestPass(((Premium) m).getGuestPass() + 1);
             }
 
-            System.out.println(fname + " " + lname + " (guest) is removed from " + instructor + ", " + fitnessClass.getTime() + ", " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
+            bottomText.setText(fname + " " + lname + " (guest) is removed from " + instructor + ", " + fitnessClass.getTime() + ", " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
         } else
-            System.out.println(fname + " " + lname + " (guest) is not in " + instructor + ", " + fitnessClass.getTime() + ", " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
+            bottomText.setText(fname + " " + lname + " (guest) is not in " + instructor + ", " + fitnessClass.getTime() + ", " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
     }
 
     @FXML
@@ -541,7 +541,7 @@ public class HelloController {
             s.load(selectedFile.getAbsoluteFile());
         }
         else{
-            System.out.println("Invalid File");
+            bottomText.setText("Invalid File");
             return;
         }
 
