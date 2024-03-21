@@ -230,6 +230,8 @@ public class HelloController {
     protected void onLoadMembersButtonClick() throws IOException {
         FileChooser fc = new FileChooser();
         File selectedFile = fc.showOpenDialog(null);
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        fc.getExtensionFilters().add(extFilter);
 
         if(selectedFile != null){
             mL.load(selectedFile.getAbsoluteFile());
@@ -240,30 +242,6 @@ public class HelloController {
         }
 
         OnPrintProfileButtonClick();
-
-
-        /*
-        Collection<FitnessClass> list = Files.readAllLines(selectedFile.toPath())
-                .stream()
-                .map(line -> {
-                    String[] details = line.split(" ");
-                    FitnessClass cd = new FitnessClass(Offer.valueOf(details[0].toUpperCase()), Instructor.valueOf(details[1].toUpperCase()), Location.valueOf(details[3].toUpperCase()), Time.valueOf(details[2].toUpperCase()), members, guests);
-                    return cd;
-                })
-                .collect(Collectors.toList());
-
-        ObservableList<FitnessClass> details = FXCollections.observableArrayList(list);
-
-        //tableView.getColumns().addAll(col1, col2, col3, col4);
-
-        col1.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getTime().toString()));
-        col2.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getClassInfo().toString()));
-        col3.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getInstructor().toString()));
-        col4.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getStudio().toString()));
-
-        tableView.setItems(details);
-        */
-
     }
     /**
      * Adds a member to a selected fitness class.
@@ -594,6 +572,8 @@ public class HelloController {
     protected void onLoadScheduleButtonClick() throws IOException {
         FileChooser fileChooser = new FileChooser();
         File selectedFile = fileChooser.showOpenDialog(null);
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
 
         if(selectedFile != null){
             s.load(selectedFile.getAbsoluteFile());
