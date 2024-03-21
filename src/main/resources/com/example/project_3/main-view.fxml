@@ -47,19 +47,15 @@
                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                     </padding>
                                     <children>
-                                       <VBox prefHeight="80.0" prefWidth="163.0">
+                                       <VBox prefHeight="98.0" prefWidth="150.0">
                                           <children>
-                                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Membership Profile">
-                                                <font>
-                                                   <Font size="14.0" />
-                                                </font>
-                                             </Text>
+                                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Membership Profile" />
                                           </children>
                                        </VBox>
-                                       <VBox prefHeight="81.0" prefWidth="389.0" spacing="10.0">
+                                       <VBox prefHeight="98.0" prefWidth="415.0" spacing="10.0">
                                           <children>
                                              <TextField fx:id="firstNameMem" promptText="first name" />
-                                             <TextField fx:id="lastNameMem" promptText="last name" />
+                                             <TextField fx:id="lastNameMem" prefHeight="26.0" prefWidth="409.0" promptText="last name" />
                                              <HBox prefHeight="46.0" prefWidth="383.0">
                                                 <children>
                                                    <DatePicker fx:id="dobMem" prefHeight="37.0" prefWidth="176.0" promptText="date of birth">
@@ -69,7 +65,8 @@
                                                    </DatePicker>
                                                    <HBox alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="197.0">
                                                       <children>
-                                                         <Button mnemonicParsing="false" onAction="#onCancelExistingButtonClick" text="Cancel Existing" />
+                                                         <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" />
+                                                         <Button mnemonicParsing="false" onAction="#onCancelExistingButtonClick" prefWidth="100.0" text="Cancel Existing" />
                                                       </children>
                                                    </HBox>
                                                 </children>
@@ -97,7 +94,7 @@
                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Member Type" />
                                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
                                                 <children>
-                                                   <HBox alignment="CENTER" prefHeight="91.0" prefWidth="223.0" spacing="10.0">
+                                                   <HBox alignment="CENTER_LEFT" prefHeight="91.0" prefWidth="223.0" spacing="10.0">
                                                       <children>
                                                          <RadioButton mnemonicParsing="false" text="Basic">
                                                             <toggleGroup>
@@ -108,7 +105,7 @@
                                                          <RadioButton mnemonicParsing="false" text="Premium" toggleGroup="$member_type" />
                                                       </children>
                                                    </HBox>
-                                                   <HBox alignment="CENTER_RIGHT" prefHeight="91.0" prefWidth="180.0" spacing="10.0">
+                                                   <HBox alignment="CENTER_RIGHT" prefHeight="91.0" prefWidth="153.0" spacing="10.0">
                                                       <children>
                                                          <Label text="Guest Pass:">
                                                             <font>
@@ -370,9 +367,7 @@
                                </Menu>
                                <Menu mnemonicParsing="false" text="Fitness Classes">
                                  <items>
-                                   <MenuItem mnemonicParsing="false" onAction="#OnScheduleButtonClick" text="Show Schedule" />
-                                       <MenuItem mnemonicParsing="false" text="Show Attendees" />
-                                       <MenuItem mnemonicParsing="false" text="Show Studio Locations" />
+                                   <MenuItem mnemonicParsing="false" onAction="#OnScheduleButtonClick" text="Show Schedule/Attendees" />
                                  </items>
                                </Menu>
                                <Menu mnemonicParsing="false" text="Other">

@@ -123,7 +123,7 @@ public class Schedule {
      * Prints the schedule of com.example.project_3.fitness classes.
      */
     public String print() {
-        String s = "Schedule and Attendees:";
+        String s = "Schedule and Attendees:\n";
         // Implementation for printing the schedule
         for (int i = 0; i < numClasses; i++) {
             FitnessClass fc = classes[i];
