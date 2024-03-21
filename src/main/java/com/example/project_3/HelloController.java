@@ -22,6 +22,11 @@ public class HelloController {
     private TextArea bottomText;
 
     @FXML
+    private TextField guestDisplay;
+    @FXML
+    private TextField guestDisplay2;
+
+    @FXML
     private TextField firstNameMem;
     @FXML
     private TextField lastNameMem;
@@ -135,23 +140,27 @@ public class HelloController {
             switch(memberType){
                 case "Basic":
                     Basic newBasic = new Basic((new Profile(fname, lname, dob)), today.getNextDate(1), location, 0);
-                    if (mL.add(newBasic))
+                    if (mL.add(newBasic)) {
                         bottomText.setText(fname + " " + lname + " added.");
+                        guestDisplay.setText("0");
+                    }
                     else
                         bottomText.setText(fname + " " + lname + " is already in the member database.");
                     break;
                 case "Family":
                     Family newFamily = new Family((new Profile(fname, lname, dob)), today.getNextDate(3), location, true);
-                    if (mL.add(newFamily))
+                    if (mL.add(newFamily)) {
                         bottomText.setText(fname + " " + lname + " added.");
-                    else
+                        guestDisplay.setText("1");
+                    }else
                         bottomText.setText(fname + " " + lname + " is already in the member database.");
                     break;
                 case "Premium":
                     Premium newPremium = new Premium((new Profile(fname, lname, dob)), today.getNextDate(12), location, 3);
-                    if (mL.add(newPremium))
+                    if (mL.add(newPremium)) {
                         bottomText.setText(fname + " " + lname + " added.");
-                    else
+                        guestDisplay.setText("3");
+                    }else
                         bottomText.setText(fname + " " + lname + " is already in the member database.");
                     break;
             }
@@ -451,12 +460,13 @@ public class HelloController {
             return;
         } else if (type.equals("class com.example.project_3.Basic")) {
             bottomText.setText(fname + " " + lname + " [BASIC] - no guest pass.");
+            guestDisplay2.setText("0");
             return;
         } else if (!location.equals(m.getHomeStudio())) {
             bottomText.setText(fname + " " + lname + " (guest) is attending a class at " + location + " - " + "home studio at " + m.getHomeStudio());
-            return;
         }
         if (type.equals("class com.example.project_3.Family")) {
+            guestDisplay2.setText("0");
             if (!((Family) m).isGuest()) {
                 bottomText.setText(fname + " " + lname + " guest pass not available.");
                 return;
@@ -464,12 +474,14 @@ public class HelloController {
                 ((Family) m).setGuest(false);
             }
         }
+
         if (type.equals("class com.example.project_3.Premium")) {
             if (((Premium) m).getGuestPass() <= 0) {
                 bottomText.setText(fname + " " + lname + " guest pass not available.");
                 return;
             } else {
                 ((Premium) m).setGuestPass(((Premium) m).getGuestPass() - 1);
+                guestDisplay2.setText(String.valueOf(((Premium)m).getGuestPass()));
             }
         }
 
@@ -478,6 +490,7 @@ public class HelloController {
         fitnessClass.setGuests(classGuests);
 
         bottomText.setText(fname + " " + lname + " (guest) attendance recorded " + offer + " at " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());
+        return;
     }
 
     @FXML
@@ -533,9 +546,11 @@ public class HelloController {
             String type1 = m.getClass().toString();
             if (type1.equals("class com.example.project_3.Family")) {
                 ((Family) m).setGuest(true);
+                guestDisplay2.setText(String.valueOf(1));
             }
             if (type1.equals("class com.example.project_3.Premium")) {
                 ((Premium) m).setGuestPass(((Premium) m).getGuestPass() + 1);
+                guestDisplay2.setText(String.valueOf(((Premium)m).getGuestPass()));
             }
 
             bottomText.setText(fname + " " + lname + " (guest) is removed from " + instructor + ", " + fitnessClass.getTime() + ", " + location + ", " + fitnessClass.getZipCode() + ", " + fitnessClass.getCounty());

@@ -115,7 +115,7 @@
                                                                <Insets left="10.0" />
                                                             </HBox.margin>
                                                          </Label>
-                                                         <TextField prefHeight="26.0" prefWidth="27.0" />
+                                                         <TextField fx:id="guestDisplay" prefHeight="26.0" prefWidth="27.0" />
                                                       </children>
                                                    </HBox>
                                                 </children>
@@ -279,7 +279,7 @@
                                                                <Font size="14.0" />
                                                             </font>
                                                          </Label>
-                                                         <TextField prefHeight="26.0" prefWidth="27.0" />
+                                                         <TextField fx:id="guestDisplay2" prefHeight="26.0" prefWidth="27.0" />
                                                       </children>
                                                    </HBox>
                                                 </children>
