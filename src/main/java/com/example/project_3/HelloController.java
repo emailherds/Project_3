@@ -266,7 +266,7 @@ public class HelloController {
         Time t = s.findFitnessClass(offer, instructor, location);
         FitnessClass fitnessClass = s.findFitnessClassA(offer, instructor, location, t);
         if (fitnessClass == null) {
-            bottomText.setText(fitnessClass + " does not exist at ");
+            bottomText.setText(offer.toString()+" by "+instructor.toString() + " does not exist at "+location.toString());
             return;
         }
         MemberList classMembers = new MemberList();
