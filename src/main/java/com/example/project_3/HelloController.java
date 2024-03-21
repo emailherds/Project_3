@@ -222,7 +222,7 @@ public class HelloController {
         else
             return;
         if(dobClass.getValue() != null)
-            dob = new Date(dobClass.getValue().getMonthValue(), dobClass.getValue().getDayOfMonth(), dobClass.getValue().getYear());
+            dob = new Date (dobClass.getValue().getMonthValue(), dobClass.getValue().getDayOfMonth(), dobClass.getValue().getYear());
         else
             return;
 

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d8bead8-68c5-46fe-892f-17631ee43659" name="Changes" comment="Lots of code" />
+    <list default="true" id="5d8bead8-68c5-46fe-892f-17631ee43659" name="Changes" comment="added text files">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project_3/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/HelloController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +113,7 @@
       <workItem from="1710467227389" duration="1248000" />
       <workItem from="1710653438354" duration="89000" />
       <workItem from="1710800962494" duration="3265000" />
-      <workItem from="1710823775704" duration="20109000" />
+      <workItem from="1710823775704" duration="20763000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -145,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710968962989</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added text files">
+      <option name="closed" value="true" />
+      <created>1710969304322</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710969304322</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +165,8 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="Some Code" />
     <MESSAGE value="Lots of code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lots of code" />
+    <MESSAGE value="added text files" />
+    <option name="LAST_COMMIT_MESSAGE" value="added text files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
