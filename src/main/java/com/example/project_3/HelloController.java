@@ -116,7 +116,19 @@ public class HelloController {
         else
             return;
 
-        if(member_type.getSelectedToggle() != null && fname != null && lname != null && dob != null && location != null && dob.isValid() && dob.isPast() && dob.dobIsEighteen()) {
+
+        if (!dob.isValid()) {
+            bottomText.setText("DOB " + dob + ": invalid calendar date!");
+            return;
+        } else if (!dob.isPast()) {
+            bottomText.setText("DOB " + dob + ": cannot be today or a future date!");
+            return;
+        } else if (!dob.dobIsEighteen()) {
+            bottomText.setText("DOB " + dob + ": must be 18 or older to join!");
+            return;
+        }
+
+        if(member_type.getSelectedToggle() != null && fname != null && lname != null) {
             RadioButton selected = (RadioButton) member_type.getSelectedToggle();
             memberType = selected.getText();
             bottomText.setText(memberType);
