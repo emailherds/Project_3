@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d8bead8-68c5-46fe-892f-17631ee43659" name="Changes" comment="added text files">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_2024_5_13_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_2024_5_13_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_2024_5_15_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_2024_5_15_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="5d8bead8-68c5-46fe-892f-17631ee43659" name="Changes" comment="a">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project_3/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_3/HelloController.java" afterDir="false" />
     </list>
@@ -116,7 +114,7 @@
       <workItem from="1710467227389" duration="1248000" />
       <workItem from="1710653438354" duration="89000" />
       <workItem from="1710800962494" duration="3265000" />
-      <workItem from="1710823775704" duration="24433000" />
+      <workItem from="1710823775704" duration="25006000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -166,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710981989914</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="a">
+      <option name="closed" value="true" />
+      <created>1710985660478</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710985660478</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,7 +183,8 @@
     <MESSAGE value="Some Code" />
     <MESSAGE value="Lots of code" />
     <MESSAGE value="added text files" />
-    <option name="LAST_COMMIT_MESSAGE" value="added text files" />
+    <MESSAGE value="a" />
+    <option name="LAST_COMMIT_MESSAGE" value="a" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

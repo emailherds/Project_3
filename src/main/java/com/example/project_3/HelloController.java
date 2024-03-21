@@ -50,7 +50,6 @@ public class HelloController {
     private Instructor instructor;
     @FXML
     private ToggleGroup location_group;
-    private Location locationName;
 
     @FXML
     private TableView<FitnessClass> tableViewClass;
@@ -337,7 +336,7 @@ public class HelloController {
             return;
         if(location_group.getSelectedToggle() != null) {
             RadioButton selected = (RadioButton) location_group.getSelectedToggle();
-            locationName = Location.valueOf(selected.getText().toUpperCase());
+            location = Location.valueOf(selected.getText().toUpperCase());
         }
         else
             return;
@@ -356,7 +355,7 @@ public class HelloController {
         Time t = s.findFitnessClass(offer, instructor, location);
         FitnessClass fitnessClass = s.findFitnessClassA(offer, instructor, location, t);
         if (fitnessClass == null) {
-            bottomText.setText(fitnessClass + " does not exist at ");
+            bottomText.setText(offer.toString()+" by "+instructor.toString() + " does not exist at "+location.toString());
             return;
         }
         MemberList classMembers = new MemberList();
@@ -395,7 +394,7 @@ public class HelloController {
             return;
         if(location_group.getSelectedToggle() != null) {
             RadioButton selected = (RadioButton) location_group.getSelectedToggle();
-            locationName = Location.valueOf(selected.getText().toUpperCase());
+            location = Location.valueOf(selected.getText().toUpperCase());
         }
         else
             return;
@@ -414,7 +413,7 @@ public class HelloController {
         Time t = s.findFitnessClass(offer, instructor, location);
         FitnessClass fitnessClass = s.findFitnessClassA(offer, instructor, location, t);
         if (fitnessClass == null) {
-            bottomText.setText(fitnessClass + " does not exist at ");
+            bottomText.setText(offer.toString()+" by "+instructor.toString() + " does not exist at "+location.toString());
             return;
         }
         MemberList classMembers = new MemberList();
@@ -429,7 +428,6 @@ public class HelloController {
 
 
         String type = m.getClass().toString();
-        System.out.println(type);
         if (m == null) {
             bottomText.setText(fname + " " + lname + " " + dob + " is not in the member database.");
             return;
@@ -484,7 +482,7 @@ public class HelloController {
             return;
         if (location_group.getSelectedToggle() != null) {
             RadioButton selected = (RadioButton) location_group.getSelectedToggle();
-            locationName = Location.valueOf(selected.getText().toUpperCase());
+            location = Location.valueOf(selected.getText().toUpperCase());
         } else
             return;
         if (firstNameClass != null)
@@ -503,7 +501,7 @@ public class HelloController {
         Time t = s.findFitnessClass(offer, instructor, location);
         FitnessClass fitnessClass = s.findFitnessClassA(offer, instructor, location, t);
         if (fitnessClass == null) {
-            bottomText.setText(fitnessClass + " does not exist at ");
+            bottomText.setText(offer.toString()+" by "+instructor.toString() + " does not exist at "+location.toString());
             return;
         }
         MemberList classMembers = new MemberList();
