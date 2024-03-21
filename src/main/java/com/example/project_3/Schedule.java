@@ -122,28 +122,29 @@ public class Schedule {
     /**
      * Prints the schedule of com.example.project_3.fitness classes.
      */
-    public void print() {
+    public String print() {
+        String s = "Schedule and Attendees:";
         // Implementation for printing the schedule
         for (int i = 0; i < numClasses; i++) {
             FitnessClass fc = classes[i];
-            System.out.println(fc);
+            s+= fc+"\n";
 
             if (fc.getMembers().getMembers() != null) {
                 for (int j = 0; j < fc.getMembers().getSize(); j++) {
                     if (j == 0)
-                        System.out.println("[Attendees]");
-                    System.out.println("   " + fc.getMembers().getMembers()[j]);
+                        s+= "[Attendees]\n";
+                    s+="   " + fc.getMembers().getMembers()[j]+"\n";
                 }
             }
             if (fc.getGuests().getMembers() != null) {
                 for (int j = 0; j < fc.getGuests().getSize(); j++) {
                     if (j == 0)
-                        System.out.println("[Guests]");
-                    System.out.println("   " + fc.getGuests().getMembers()[j]);
+                        s+="[Guests]\n";
+                    s+="   " + fc.getGuests().getMembers()[j]+"\n";
                 }
             }
         }
-        System.out.println("-end of class list.");
+        return s+="-end of class list.\n";
     }
 
     /**

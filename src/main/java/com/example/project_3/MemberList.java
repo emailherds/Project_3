@@ -151,12 +151,12 @@ public class MemberList {
     /**
      * Prints the list of members sorted by county and zip code.
      */
-    public void printByCounty() {
-        if (size == 0) {
-            System.out.println("!");
-            return;
+    public String printByCounty() {
+        String s = "";
+        if (size == 0) {;
+            return "No Members";
         }
-        System.out.println("\n-list of members sorted by county then zipcode-");
+        s+=("-list of members sorted by county then zipcode-\n");
         for (int i = 0; i < size; i++) {
             Member min = members[i];
             int minIndex = i;
@@ -178,20 +178,21 @@ public class MemberList {
         }
 
         for (int i = 0; i < size; i++) {
-            System.out.println(members[i].toString());
+            s+= members[i].toString()+"\n";
         }
-        System.out.println("-end of list-\n");
+        s+="-end of list-\n";
+        return s;
     } //sort by county then zip code
 
     /**
      * Prints the list of members sorted by member profile.
      */
-    public void printByMember() {
+    public String printByMember() {
+        String s = "";
         if (size == 0) {
-            System.out.println("!");
-            return;
+            return "No Members";
         }
-        System.out.println("\n-list of members sorted by member profiles-");
+        s += "-list of members sorted by member profiles-\n";
         for (int i = 0; i < size; i++) {
             Member min = members[i];
             int minIndex = i;
@@ -210,24 +211,29 @@ public class MemberList {
         }
 
         for (int i = 0; i < size; i++) {
-            System.out.println(members[i].toString());
+            s+= members[i].toString()+"\n";
         }
-        System.out.println("-end of list-\n");
+        s+=("-end of list-\n");
+        return s;
     } //sort by member profile
 
     /**
      * Prints the list of members sorted by fees.
      */
-    public void printFees() {
+    public String printFees() {
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
-        System.out.println("-list of members with next dues-");
+        if(size == 0){
+            return "No Members";
+        }
+        String s = "\"-list of members with next dues-\"\n";
         for (int i = 0; i < size; i++) {
             if (members[i].bill() > 0) {
                 String formattedNumber = decimalFormat.format(members[i].bill());
-                System.out.println(members[i].toString() + " [next due: $" + formattedNumber + "]");
+                s+= members[i].toString() + " [next due: $" + formattedNumber + "]\n";
             }
         }
-        System.out.println("-end of list-\n");
+        s+="-end of list-\n";
+        return s;
     } //print the array as is with the next due amounts
 
     /**
